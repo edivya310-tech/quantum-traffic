@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+@theme {
+  --color-void: #05070b;
+  --color-base: #0a0e16;
+  --color-panel: #0f1420;
+  --color-elevated: #161d2e;
+  --color-border-subtle: #1c2436;
+  --color-border-strong: #37455f;
+  --color-primary: #eef2f8;
+  --color-secondary: #9aa7bd;
+  --color-muted: #5c6a84;
+  --color-cyan: #22d3ee;
+  --color-go: #22c55e;
+  --color-stop: #ef4444;
+  --color-warn: #eab308;
+  --color-congestion: #f97316;
+
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+  
+  --animate-fade-in: fade-in 1.5s ease-out forwards;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-pulse-slow: pulse-slow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-glow: glow 3s ease-in-out infinite alternate;
+  --animate-particle-1: particle-1 15s linear infinite;
+  --animate-particle-2: particle-2 20s linear infinite;
+  --animate-particle-3: particle-3 12s linear infinite;
+  --animate-scan: scan 4s ease-in-out infinite;
+  --animate-grid-move: grid-move 20s linear infinite;
+
+  @keyframes fade-in {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  @keyframes pulse-slow {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+  @keyframes glow {
+    from { box-shadow: 0 0 10px rgba(34, 211, 238, 0.2), 0 0 20px rgba(34, 211, 238, 0.1); }
+    to { box-shadow: 0 0 20px rgba(34, 211, 238, 0.6), 0 0 30px rgba(34, 211, 238, 0.4); }
+  }
+  @keyframes particle-1 {
+    0% { transform: translate(0, 0) scale(1); opacity: 0.3; }
+    33% { transform: translate(100px, -150px) scale(1.5); opacity: 0.8; }
+    66% { transform: translate(250px, -50px) scale(0.8); opacity: 0.4; }
+    100% { transform: translate(0, 0) scale(1); opacity: 0.3; }
+  }
+  @keyframes particle-2 {
+    0% { transform: translate(0, 0) scale(1); opacity: 0.4; }
+    33% { transform: translate(-120px, 100px) scale(1.2); opacity: 0.6; }
+    66% { transform: translate(-50px, 200px) scale(0.9); opacity: 0.2; }
+    100% { transform: translate(0, 0) scale(1); opacity: 0.4; }
+  }
+  @keyframes particle-3 {
+    0% { transform: translate(0, 0) scale(1); opacity: 0.2; }
+    50% { transform: translate(150px, 150px) scale(1.3); opacity: 0.7; }
+    100% { transform: translate(0, 0) scale(1); opacity: 0.2; }
+  }
+  @keyframes scan {
+    0%, 100% { transform: translateY(-100%); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translateY(100%); opacity: 0; }
+  }
+  @keyframes grid-move {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(-50px, -50px); }
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-void text-primary font-sans antialiased selection:bg-cyan selection:text-void;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    @apply bg-elevated/40 backdrop-blur-xl border border-cyan/20 shadow-lg shadow-cyan/5;
+  }
+  .glass-input {
+    @apply bg-void/50 border border-border-strong rounded px-4 py-2 text-primary focus:outline-none focus:border-cyan/50 focus:ring-1 focus:ring-cyan/50 transition-all placeholder-muted backdrop-blur-md;
+  }
+  .quantum-bg {
+    background-image: 
+      linear-gradient(to bottom, rgba(5, 7, 11, 1) 0%, rgba(5, 7, 11, 0.8) 100%),
+      radial-gradient(circle at 50% 50%, rgba(34, 211, 238, 0.1) 0%, rgba(5, 7, 11, 0) 60%);
+  }
+  .grid-bg {
+    background-image: 
+      linear-gradient(rgba(34, 211, 238, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(34, 211, 238, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+}
