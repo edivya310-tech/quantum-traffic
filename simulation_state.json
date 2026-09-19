@@ -1,0 +1,57 @@
+{
+    "junctions": {
+        "J1": {
+            "vehicles": 24,
+            "queue": 4,
+            "waiting_time": 8,
+            "throughput": 20
+        },
+        "J2": {
+            "vehicles": 24,
+            "queue": 4,
+            "waiting_time": 8,
+            "throughput": 20
+        },
+        "J3": {
+            "vehicles": 60,
+            "queue": 40,
+            "waiting_time": 80,
+            "throughput": 20
+        },
+        "J4": {
+            "vehicles": 28,
+            "queue": 8,
+            "waiting_time": 16,
+            "throughput": 20
+        }
+    },
+    "signals": {
+        "J1": "NORMAL",
+        "J2": "NORMAL",
+        "J3": "NORMAL",
+        "J4": "NORMAL"
+    },
+    "closed_roads": [
+        [
+            "J1",
+            "J3"
+        ]
+    ],
+    "emergency": {
+        "detected": true,
+        "active": false,
+        "source": "J1",
+        "destination": "J4",
+        "route": [
+            "J1",
+            "J2",
+            "J4"
+        ]
+    },
+    "optimized_signal_timings": {
+        "J1": 12,
+        "J2": 20,
+        "J3": 35,
+        "J4": 13
+    }
+}
