@@ -1,0 +1,15 @@
+fastapi
+uvicorn
+pydantic
+pydantic-settings
+sqlalchemy
+qiskit
+qiskit-aer
+qiskit-optimization
+networkx
+numpy
+pandas
+scipy
+pytest
+httpx
+websockets
